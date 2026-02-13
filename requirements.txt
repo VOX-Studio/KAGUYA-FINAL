@@ -1,0 +1,18 @@
+# Dépendances principales
+numpy>=1.24.0
+sounddevice>=0.4.6
+soundfile>=0.12.1
+faster-whisper>=0.10.0
+llama-cpp-python>=0.2.60
+chromadb>=0.4.22
+pyyaml>=6.0
+
+# Pour la construction de l'exécutable
+pyinstaller>=6.0
+
+# Pour le TTS de fallback (optionnel)
+pyttsx3>=2.90  # alternative sous Windows
+
+# Note: sous Linux, installer espeak: sudo apt install espeak
+# Sous macOS, say est inclus
+# Sous Windows, pyttsx3 peut être utilisé

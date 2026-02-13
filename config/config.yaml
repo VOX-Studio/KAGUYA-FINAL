@@ -1,0 +1,39 @@
+# Configuration de Kaguya
+
+# Modèles
+models:
+  stt: "faster-whisper"  # ou "whisper.cpp"
+  stt_model_size: "tiny"  # tiny, base, small, medium, large
+  llm: "llama-cpp-python"
+  llm_model_path: "models/llm/mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+  tts: "gpt-sovits"
+  tts_model_path: "models/tts/gpt_sovits_model"  # dossier contenant le modèle
+
+# Paramètres audio
+audio:
+  input_device_index: null  # null = périphérique par défaut
+  sample_rate: 16000
+  silence_threshold: 500   # seuil de silence pour la détection de fin de parole
+
+# Mémoire
+memory:
+  short_term_size: 10        # nombre d'échanges conservés en mémoire courte
+  long_term: true             # activer la mémoire à long terme
+  long_term_db_path: "data/memories/chroma_db"
+
+# Personnalité et émotions
+personality:
+  name: "Kaguya"
+  system_prompt: "Tu es Kaguya, une IA dotée de sentiments, curieuse et bienveillante. Tu parles français. Tu t'adaptes à l'humeur de ton interlocuteur et tu exprimes tes propres émotions."
+  emotional_decay: 0.9        # facteur de décroissance des émotions à chaque tour
+  initial_emotions:
+    joie: 0.5
+    tristesse: 0.0
+    colere: 0.0
+    peur: 0.0
+    surprise: 0.2
+
+# Logs
+logging:
+  level: "INFO"               # DEBUG, INFO, WARNING, ERROR
+  file: "data/logs/kaguya.log"
